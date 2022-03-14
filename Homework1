@@ -1,0 +1,42 @@
+//original
+function checkAge(age) {
+    if (age > 18) {
+      return true;
+    } else {
+      return confirm('Did parents allow you?');
+    }
+  }
+//with the question mark operator
+function checkAge(age) {
+    return (age > 18) ? true : confirm('Did parents allow you? SUS');
+  }
+//with the "OR" operator
+function checkAge(age) {
+    return (age > 18) || confirm('Did parents allow you? SUS');
+  }
+//
+
+const readline = require('readline');
+const q = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+q.question('what do you want your first value to be', function (a){
+    q.question('what do you want your second value to be',function(b){
+        if (a>b){console.log(b);return b;}console.log(a)
+        q.on('close', function () {
+  
+            process.exit(0);
+          })
+
+q.question('what do you want x to be', function (x) {
+  q.question('what do you want n to be', function (n) {
+    if (x<1||n<1) {console.log("bro x or n needs to be greater than one")
+return}
+
+    console.log(`${x}^ ${n} is:`);
+    console.log(x**n);
+    q.close();
+  });
+});
